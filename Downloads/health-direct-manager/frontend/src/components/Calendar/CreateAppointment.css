@@ -1,0 +1,122 @@
+.appointment-container {
+
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  padding-top: 0.5rem;
+  min-width: 350px;
+  /* max-width: 400px; */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.appointment-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 3rem;
+}
+
+.close-btn {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #374151;
+}
+
+.appointment-body {
+  position: relative;
+}
+
+.input-group {
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.text-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding-right: 0.5rem;
+  color: black;
+}
+
+.text-input::placeholder{
+    color: #b4c0d1;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #838994;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 3rem;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  max-height: 10rem;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f9fafb;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #ec4899;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #db2777;
+}

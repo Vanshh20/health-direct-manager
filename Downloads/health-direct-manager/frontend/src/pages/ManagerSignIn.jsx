@@ -50,9 +50,13 @@ function ManagerSignIn() {
       toast.success('Manager login successful!');
       console.log('ManagerSignIn: Navigating to /manager-dashboard');
     } catch (err) {
-      console.error('ManagerSignIn: Error during sign-in:', err);
-      const errorMessage = err.response?.data?.message || 'Manager login failed';
-      toast.error(errorMessage); // Display the specific error message to the user
+      console.error('ManagerSignIn: Error during sign-in:', {
+        message: err.message,
+        response: err.response?.data,
+        status: err.response?.status
+      });
+      const errorMessage = err.response?.data?.message || 'Manager login failed. Please try again.';
+      toast.error(errorMessage);
     }
   };
 

@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext();
@@ -9,7 +9,28 @@ export const AuthProvider = ({ children }) => {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
   });
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+
+  // Validate token on initial load
+  useEffect(() => {
+    const validateToken = async () => {
+      if (token) {
+        try {
+          // Replace with actual API call to validate token if your backend supports it
+          // For now, we'll assume token is valid if it exists
+          // Example: await api.get('/auth/validate-token');
+          setIsLoading(false);
+        } catch (error) {
+          console.error('Token validation failed:', error);
+          logout();
+        }
+      } else {
+        setIsLoading(false);
+      }
+    };
+    validateToken();
+  }, []);
 
   const login = (newToken, userData) => {
     setToken(newToken);
@@ -28,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

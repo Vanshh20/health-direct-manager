@@ -21,10 +21,12 @@ const userSchema = new mongoose.Schema({
   surname: {
     type: String,
     trim: true,
+    required: true, // Mandatory for manager profile
   },
   name: {
     type: String,
     trim: true,
+    required: true, // Mandatory for manager profile
   },
   patronymicName: {
     type: String,
@@ -33,9 +35,21 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
     enum: ['Male', 'Female', 'Other'],
+    default: 'Male', // Default as per requirement
+    required: true, // Mandatory for manager profile
   },
   dateOfBirth: {
     type: Date,
+    required: true, // Mandatory for manager profile
+  },
+  age: {
+    type: Number,
+    required: true, // Mandatory for manager profile
+  },
+  residence: {
+    type: String,
+    trim: true,
+    required: true, // Mandatory for manager profile (City of Residence)
   },
   phoneNumber: {
     type: String,

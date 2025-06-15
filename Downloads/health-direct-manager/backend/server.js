@@ -4,6 +4,8 @@ const cors = require('cors');
 require('dotenv').config();
 
 const managerRoutes = require('./routes/manager');
+const profileRoutes = require('./routes/profile');
+const doctorRoutes = require('./routes/doctors');
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', managerRoutes);
+app.use('/api/profile', profileRoutes);
+app.use('/api/doctors', doctorRoutes);
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI, {

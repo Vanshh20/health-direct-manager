@@ -26,12 +26,31 @@ async function addManager() {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    // Calculate age from date of birth
+    const dateOfBirth = new Date('1980-01-01'); // Example date, update as needed
+    const today = new Date();
+    let age = today.getFullYear() - dateOfBirth.getFullYear();
+    const monthDiff = today.getMonth() - dateOfBirth.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dateOfBirth.getDate())) {
+      age--;
+    }
+
     // Create new manager
     user = new User({
       email,
       password: hashedPassword,
       role: 'manager',
-      profileCompleted: true, // Assuming manager doesn't need profile completion
+      name: 'John', // Required: First Name
+      surname: 'Doe', // Required: Surname
+      patronymicName: '', // Optional
+      gender: 'Male', // Required, default
+      dateOfBirth, // Required: Date of Birth
+      age, // Auto-calculated
+      residence: 'New York', // Required: City of Residence
+      phoneNumber: '1234567890', // Optional
+      additionalPhone: '', // Optional
+      profilePicture: null, // Default to null
+      profileCompleted: true, // Manager profile considered complete
     });
 
     await user.save();
