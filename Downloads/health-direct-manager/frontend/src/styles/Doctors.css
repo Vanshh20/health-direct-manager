@@ -736,6 +736,56 @@
   transform: translateY(-1px);
 }
 
+/* New styles for PatientDetails.jsx */
+.tab-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+  background-color: #e0e0e0;
+}
+
+.active-tab {
+  background-color: #007bff;
+  color: white;
+}
+
+.details-section {
+  padding: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-label {
+  font-weight: bold;
+  width: 30%;
+}
+
+.detail-value {
+  width: 70%;
+}
+
+.placeholder-tab {
+  padding: 20px;
+  color: #666;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .modern-form-container {

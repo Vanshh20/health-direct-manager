@@ -15,6 +15,9 @@ import Profile from "./pages/Profile";
 import Doctors from "./pages/Doctors";
 import AddDoctorForm from "./pages/AddDoctorForm";
 import EditDoctorForm from "./pages/EditDoctorForm";
+import Patients from "./pages/Patients";
+import AddPatientForm from "./pages/AddPatientForm";
+import PatientDetails from "./pages/PatientDetails";
 import "./App.css";
 
 function App() {
@@ -85,6 +88,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <EditDoctorForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/patients"
+            element={
+              <ProtectedRoute>
+                <Patients />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/patients/add"
+            element={
+              <ProtectedRoute>
+                <AddPatientForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/patients/:id"
+            element={
+              <ProtectedRoute>
+                <PatientDetails />
               </ProtectedRoute>
             }
           />

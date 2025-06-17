@@ -95,3 +95,33 @@ export const deleteDoctor = async (id) => {
     throw error;
   }
 };
+
+export const addPatient = async (data) => {
+  try {
+    const response = await api.post('/patients', data);
+    return response;
+  } catch (error) {
+    console.error('Add Patient Error:', error.response?.data || error.message);
+    throw error;
+  }
+};
+
+export const getPatients = async () => {
+  try {
+    const response = await api.get('/patients');
+    return response;
+  } catch (error) {
+    console.error('Get Patients Error:', error.response?.data || error.message);
+    throw error;
+  }
+};
+
+export const getPatient = async (id) => {
+  try {
+    const response = await api.get(`/patients/${id}`);
+    return response;
+  } catch (error) {
+    console.error('Get Patient Error:', error.response?.data || error.message);
+    throw error;
+  }
+};

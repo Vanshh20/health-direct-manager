@@ -1,0 +1,439 @@
+/* Patients.css */
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.tab-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.tab-button.active-tab {
+  border-bottom: 3px solid #66c9cb;
+  color: #000;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.layout-pagination-div {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.layout-switch {
+  display: flex;
+  gap: 0;
+}
+
+.layout-button-1 {
+  padding: 0.6rem 1.5rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #fafbfd;
+  color: rgb(11, 159, 208);
+  box-shadow: 1px 1px 7px #0000003a;
+  cursor: pointer;
+}
+
+.layout-button-2 {
+  padding: 0.6rem 1.5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #fafbfd;
+  color: rgb(11, 159, 208);
+  box-shadow: 1px 1px 7px #0000003a;
+  cursor: pointer;
+}
+
+.layout-button-1.active-layout {
+  background-color: #fff;
+  color: blue;
+  border-color: transparent;
+}
+.layout-button-2.active-layout {
+  background-color: #fff;
+  color: blue;
+  border-color: transparent;
+}
+
+.add-patient-btn {
+  background: #3b82f6;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.add-patient-btn:hover {
+  background: #2563eb;
+}
+
+.expanded-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* default mobile */
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .expanded-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expanded-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 per row on large screens */
+  }
+}
+
+.compact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.patient-card.active {
+  background: #183c6c;
+  color: white;
+  border-color: #183c6c;
+}
+
+.patient-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.left-section {
+  width: 60%;
+}
+
+.left-section .patient-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #c04ea3;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 40%;
+}
+
+.gender-appt-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+}
+
+.gender-icon.male {
+  color: white;
+  background-color: #007fdd;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gender-icon.female {
+  color: white;
+  background-color: #e52070;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-number {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.appointment-number span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  color: rgb(137, 137, 255);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #8b8a8a;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info-left {
+  width: 60%;
+  padding-right: 2rem;
+}
+
+.info-left .info-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.info-row > div {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.patient-card.active .info-row > div {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.info-row small {
+  display: block;
+  font-size: 0.8rem;
+  color: gray;
+  margin-bottom: 2px;
+}
+
+.info-left .info-row-2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.btn.details {
+  background-color: #2b5c87;
+  color: white;
+  padding: 0.4rem 4rem;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn.details:hover {
+  background-color: #153e62;
+}
+
+.info-right {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+
+.icon-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 1rem;
+}
+
+.icon-buttons .icon {
+  background-color: #f3f3f3;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.icon-buttons .icon:hover {
+  transform: scale(110%);
+}
+
+.icon.phone {
+  background-color: #19a400;
+  color: white;
+}
+.icon.email {
+  background-color: #c66aa8;
+  color: white;
+}
+.icon.whatsapp {
+  background-color: #10cc00;
+  color: white;
+}
+.icon.telegram {
+  background-color: #007bb5;
+  color: white;
+}
+
+.patient-card-2 {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.patient-card-2.active {
+  background: #183c6c;
+  color: white;
+  border-color: #183c6c;
+}
+
+.header-row-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-name-2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c04ea3;
+}
+
+.info-group-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  font-size: 1rem;
+}
+
+.info-group-2 small {
+  display: block;
+  font-size: 0.75rem;
+  color: gray;
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.info-group-2 strong,
+.info-group-2 div {
+  color: #333;
+}
+
+.patient-card-2.active .info-group-2 div,
+.patient-card-2.active .info-group-2 strong {
+  color: #fff;
+}
+
+.appt-number-2 {
+  font-size: 0.95rem;
+  color: rgb(137, 137, 255);
+}
+
+.appt-number-2 span {
+  display: inline-block;
+}
+
+.btn-2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.btn-2.details-2 {
+  background-color: #2b5c87;
+  color: white;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-2.details-2:hover {
+  background-color: #153e62;
+}
+
+.icon-buttons-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.2rem;
+}
+
+.icon-buttons-2 .icon-2 {
+  background-color: #f3f3f3;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.icon-buttons-2 .icon-2:hover {
+  transform: scale(110%);
+}
+
+.icon-2.phone-2 {
+  background-color: #19a400;
+  color: white;
+}
+.icon-2.email-2 {
+  background-color: #c66aa8;
+  color: white;
+}
+.icon-2.whatsapp-2 {
+  background-color: #10cc00;
+  color: white;
+}
+.icon-2.telegram-2 {
+  background-color: #007bb5;
+  color: white;
+}
